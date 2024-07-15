@@ -20,8 +20,7 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
-        String test = this.userService.handleHello();
-        model.addAttribute("Capybara", test);
+        model.addAttribute("Capybara", "test");
         model.addAttribute("java", "javakhoquahuhu");
         return "hello12";
     }
@@ -35,6 +34,7 @@ public class UserController {
     @RequestMapping(value = "admin/user/create", method = RequestMethod.POST)
     public String createUserPage(Model model, @ModelAttribute("newUser") User capigiba) {
         System.out.println("run here" + capigiba);
+        this.userService.handleSaveUser(capigiba);
         return "hello12";
     }
 
