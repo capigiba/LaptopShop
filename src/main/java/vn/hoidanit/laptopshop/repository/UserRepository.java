@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User save(User capybara);
 
     List<User> findByEmail(String email);
+
+    List<User> findAll();
 }
