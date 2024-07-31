@@ -32,4 +32,8 @@ public class UserService {
         System.out.println(capigiba);
         return capigiba;
     }
+
+    public void deleteAUser(long id) {
+        this.userRepository.deleteById(id);
+    }
 }
