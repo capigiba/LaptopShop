@@ -1,4 +1,4 @@
-package vn.capigiba.laptopshop.controller;
+package vn.capigiba.laptopshop.controller.admin;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class UserController {
     public String getUserPage(Model model) {
         List<User> users = this.userService.getAllUsers();
         model.addAttribute("users", users);
-        return "admin/user/table-user";
+        return "admin/user/show";
     }
 
     @RequestMapping("/admin/user/{id}")
@@ -51,7 +51,7 @@ public class UserController {
         System.out.println("check path id: " + id);
         model.addAttribute("user", user);
         model.addAttribute("id", id);
-        return "admin/user/show";
+        return "admin/user/detail";
     }
 
     @RequestMapping("/admin/user/create")
